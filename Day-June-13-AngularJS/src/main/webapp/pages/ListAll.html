@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Details</title>
+<script type="text/javascript" src="../script/angular.min.js"></script>
+<script type="text/javascript" src="../script/appConfig.js"></script>
+<script type="text/javascript" src="../script/appCtrl.js"></script>
+
+
+
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="custCtrl">
+	<table>
+		<tr>
+			<th>Customer Id</th>
+			<th>Customer Name</th>
+			<th>Contact Number</th>
+			<th>City</th>
+		</tr>
+		
+		<tr ng-repeat="cust in customers ">
+			<td>{{cust.CustId }}</td>
+			
+			<td> {{cust.FirstName|custFilter}}	{{cust.LastName|custFilter}}		</td>
+			
+			<td>{{cust.contact }}</td>
+			<td>{{cust.city }}</td>
+			
+			
+		</tr>
+	
+	</table>
+</div>
+
+</body>
+</html>

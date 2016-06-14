@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MyForm Details</title>
+<script type="text/javascript" src="../script/angular.min.js"></script>
+
+<style type="text/css">
+.errMsg{
+	color:red;
+	font-size: 14px;
+	font-weight: bold;
+}
+</style>
+
+<script type="text/javascript">
+var app=angular.module("myApp",[]);
+
+
+
+app.controller("myCtlr",function($scope){
+	 $scope.firstName="Tom";
+	$scope.lastName="Jerry";
+	$scope.empEmail="Tom@gmail.com"; 
+	
+});
+
+</script>
+
+</head>
+<body ng-app="myApp">
+
+<form name="empForm" ng-controller="myCtlr">
+<table>
+	<tr>
+		<td>Enter FirstName:</td>
+		<td>
+			<input type="text" name="firstName" ng-model="firstName" size="20" required="required">
+			<span ng-show="empForm.firstName.$touched && empForm.firstName.$invalid">
+				<span class="errMsg" ng-show="empForm.firstName.$error.required">* Please Enter FirstName.</span>
+			
+			</span>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>Enter FirstName:</td>
+		<td>
+			<input type="text" name="lastName" ng-model="lastName" size="20" required="required">
+			<span ng-show="empForm.lastName.$dirty && empForm.lastName.$invalid">
+				<span class="errMsg" ng-show="empForm.lastName.$error.required">* Please Enter LastName.</span>
+			
+			</span>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>Email Id:</td>
+		<td>
+			<input type="email" name="empEmail" ng-model="empEmail" size="20" required="required">
+			<span ng-show="empForm.empEmail.$dirty && empForm.empEmail.$invalid">
+				<span class="errMsg" ng-show="empForm.empEmail.$error.required">* Please Enter Email.</span>
+				<span class="errMsg" ng-show="empForm.empEmail.$error.email">* Please Enter Valid Email.</span>
+			
+			</span>
+		</td>
+	</tr>
+
+
+	<tr>
+	
+		<td></td>
+		<td><input type="submit" name="submit" value="Save">
+	</tr>
+	
+	
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+[
+	{
+		"FirstName" : "tom",
+		"LastName" : "jerry",
+		"CustId" : 111,
+		"contact" : 23424456,
+		"city" : "Chennai"
+	},
+	{
+		"FirstName" : "ram",
+		"LastName" : "singh",
+		"CustId" : 123,
+		"contact" : 45666,
+		"city" : "Pune"
+	},
+	{
+		"FirstName" : "ani",
+		"LastName" : "jack",
+		"CustId" : 7888,
+		"contact" : 2233111,
+		"city" : "Chennai"
+	}
+	
+]

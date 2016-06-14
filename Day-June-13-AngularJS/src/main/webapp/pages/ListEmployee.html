@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="../script/angular.min.js"></script>
+<script type="text/javascript">
+var app=angular.module("myApp",[]);
+
+
+app.filter("customFilter",function(){
+	
+	return function(val){
+		return "INR " +val;
+	};
+	
+});
+
+
+app.controller("myCtlr",function($scope,$http){
+	
+	$scope.firstName="Annie";
+	
+	var url="http://localhost:8083/Day-June-13-AngularJS/pages/employee.txt";
+	
+	$http.get(url)
+	 .success(function(response){
+		$scope.employees=response;
+		console.log($scope.employees);
+	}); 
+	$http.get(url).error(function(errMsg){
+		console.log(errMsg);
+	});
+	
+	
+	
+	$scope.sortData=function(field){
+		$scope.myField=field;
+	};
+	
+	
+});
+
+
+
+</script>
+</head>
+<body ng-app="myApp">
+
+
+<div ng-controller="myCtlr">
+
+<h1>{{firstName | uppercase}}</h1>
+
+<h1>{{firstName | lowercase}}</h1>
+
+	<table>
+	<tr>
+		<th ng-click="sortData('Name')">Name</th>
+		<th ng-click="sortData('Age')">Age</th>
+		<th ng-click="sortData('Salary')">Salary</th>
+		<th ng-click="sortData('city')">City</th>
+	</tr>
+	<tr ng-repeat=" emp in employees | orderBy: myField ">
+		<td>{{emp.Name | uppercase}}</td>
+		<td>{{emp.Age}}</td>
+	<!-- 	<td>{{emp.Salary | currency }}</td> -->
+	<td>{{emp.Salary | customFilter }}</td> 
+	
+		<td>{{emp.city}}</td>
+	</tr>
+	
+	
+	
+	</table>
+
+</div>
+
+</body>
+</html>

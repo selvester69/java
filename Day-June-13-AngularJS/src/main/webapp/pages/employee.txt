@@ -1,0 +1,21 @@
+[
+	{
+		"Name" : " Tom",
+		"Age" : 25,
+		"Salary" : 2300,
+		"city" : "Chennai"
+	},
+	{
+		"Name" : " Jerry",
+		"Age" : 23,
+		"Salary" : 5600,
+		"city" : "Chennai"
+	},
+	{
+		"Name" : " Sam",
+		"Age" : 25,
+		"Salary" : 5600.0,
+		"city" : "Pune"
+	}
+
+]

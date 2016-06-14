@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Router Demo</title>
+
+<script type="text/javascript" src="../script/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script type="text/javascript" src="../script/jsView.js"></script>
+</head>
+<body ng-app="myView">
+<div>
+<div>
+	<a href="#/">Main Page</a> 
+	<a href="#/create">Create</a> 
+	<a href="#/update">Update</a> 
+	<a href="#/listAll">ListAll</a> 
+	<a href="#/logout">LogOut</a> 
+
+</div>
+<div ng-view style="border: 1px solid; width: 500px; height: 400px; ">
+
+</div>
+</div>
+
+
+</body>
+</html>
